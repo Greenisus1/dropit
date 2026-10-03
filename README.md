@@ -25,16 +25,10 @@ Mac (Terminal window), from a folder you can read, for example ~/CrunchByte:
 cd ~/CrunchByte
 ```
 
-macOS has no wget, so either copy the file from the Pi (run on the Mac, use the Pi's IP from `hostname -I`):
+macOS has no wget, so copy the file from the Pi instead. Run this on the Mac (the Pi's IP comes from `hostname -I` on the Pi):
 
 ```
 scp -O root@PI_IP:/root/dropit.sh ~/CrunchByte/
-```
-
-or download it with curl:
-
-```
-curl -o dropit.sh https://raw.githubusercontent.com/Greenisus1/dropit/main/dropit.sh
 ```
 
 Then run it:
