@@ -10,14 +10,40 @@ AirDrop-style file transfer between two computers on the same Wi-Fi. One shell s
 - Transfers work in both directions: run "receive" on one device and "send" on the other, then swap.
 - Everything stays on the local network. Data is encrypted and authenticated with a key derived from the PIN (PBKDF2, SHA-256 stream, HMAC per message). Three wrong PINs make a new one.
 
-## Use
+## Install and run
+
+Pi (DietPi window, root@DietPi):
 
 ```
 wget -O dropit.sh https://raw.githubusercontent.com/Greenisus1/dropit/main/dropit.sh
 sh dropit.sh
 ```
 
-Pick 1 (receive) on one device and 2 (send) on the other. Or skip the menu:
+Mac (Terminal window), from a folder you can read, for example ~/CrunchByte:
+
+```
+cd ~/CrunchByte
+```
+
+macOS has no wget, so either copy the file from the Pi (run on the Mac, use the Pi's IP from `hostname -I`):
+
+```
+scp -O root@PI_IP:/root/dropit.sh ~/CrunchByte/
+```
+
+or download it with curl:
+
+```
+curl -o dropit.sh https://raw.githubusercontent.com/Greenisus1/dropit/main/dropit.sh
+```
+
+Then run it:
+
+```
+sh dropit.sh
+```
+
+Pick 1 (receive) on one device and 2 (send) on the other. The receiver shows a PIN, the sender chooses it from the list and types the PIN. Or skip the menu:
 
 ```
 sh dropit.sh receive
