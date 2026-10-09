@@ -54,3 +54,7 @@ Received files go to `~/Downloads` on a Mac and `~/Dropit` on Linux (or `~/Dropi
 - If macOS blocks reading a file in Downloads, copy it to another folder first.
 - Ports used: UDP 48555 (discovery), TCP 48556 (transfer).
 - Home-made crypto from standard library parts, fine for a home network, not a replacement for audited tools. A 6-digit PIN can be guessed offline by someone who records the pairing on your network.
+
+## Fullscreen Store launch
+
+Version 1.0.1 adds a full-terminal interface when launched through the Store. Python 3 with curses and an interactive terminal are required. The original source remains available directly. Arrow keys select, Enter opens, and Q/Esc returns. Original commands temporarily take over the terminal for their prompts and output, then return to the full-terminal menu. Nested original prompts remain plain; they are not captured or rewritten. Passwords, sudo, confirmations, package changes and original limitations retain their old behavior. No administrative/package/transfer action ran during validation. Linux terminal checks passed; physical Raspberry Pi and non-Linux systems are untested.
